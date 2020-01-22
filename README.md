@@ -1,6 +1,29 @@
 # 基于opencv tenserflow2.0实战CNN人脸识别锁定与解锁win10屏幕
 # 前言
-windows hello的低阶板本，没有hello的3D景深镜头，因此这是一个基于图片的识别机主的程序。具体运行时，解锁时，判断是否是本人；若不是本人或无人（10s），锁屏；若是本人，正常使用
+windows hello的低阶板本，没有Windows hello的3D景深镜头，因此这是一个基于图片的识别机主的程序。
+具体运行时，解锁时，判断是否是本人；若不是本人或无人（10s），锁屏；若是本人，正常使用；(采取无密码原始界面)
+
+人脸的检测采取opencv cv2.CascadeClassifier
+
+关于模型则采取
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d (Conv2D)              (None, 62, 62, 128)       3584
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 60, 60, 64)        73792
+_________________________________________________________________
+flatten (Flatten)            (None, 230400)            0
+_________________________________________________________________
+dense (Dense)                (None, 40)                9216040
+=================================================================
+Total params: 9,293,416
+Trainable params: 9,293,416
+Non-trainable params: 0
+_________________________________________________________________
+None
+```
 
 基础需要由四部分组成。
 
@@ -518,4 +541,4 @@ ws.run "cmd /c E:\ziliao\LearningPy\face\myface.bat",vbhide
 * https://www.cnblogs.com/mu---mu/p/FaceRecognition-tensorflow.html
 * https://github.com/saksham-jain/Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition
 
-#CSDN:https://blog.csdn.net/weixin_42348202/article/details/104071199
+# CSDN:https://blog.csdn.net/weixin_42348202/article/details/104071199
