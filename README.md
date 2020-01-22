@@ -3,16 +3,18 @@
 windows hello的低阶板本，没有hello的3D景深镜头，因此这是一个基于图片的识别机主的程序。具体运行时，解锁时，判断是否是本人；若不是本人或无人（10s），锁屏；若是本人，正常使用
 
 基础需要由四部分组成。
-face_1.py|face_2.py|face_3.py|face_4.py|
--|-|-|-|-
+
+face_1.py|face_2.py|face_3.py|face_4.py
+-|-|-|-
 制作自己人脸训练数据|由face_1.py 和 face_2.py制作的数据来进行CNN深度学习，并保存模型|由已知其他人脸来制作数据|最后的检测程序
 
 ## 运行python环境
 主要是在tensorflow2.0-gpu下运行；
 这里略微吐槽下tensorflow2.0.keras模块部分无提示，对于新手不太友好。
 conda list：
+
  Name|Version|Build  Channel
--|-|-|-|-
+-|-|-
 _tflow_select|2.1.0| gpu
 absl-py|      0.8.1|py37_0
 altgraph|     0.17| pypi_0    pypi
@@ -505,13 +507,15 @@ python face_4.py
 Set ws = CreateObject("Wscript.Shell") 
 ws.run "cmd /c E:\ziliao\LearningPy\face\myface.bat",vbhide
 ``` 
-### 任务计划库中 
+### 添加hide.vbs任务计划库中 
 创建任务
 
-常规中|触发器|操作|
--|-|-|-
-最高权限 选择对应系统win10|添加 工作站解锁时|添加hide.vbs|
+常规中|触发器|操作
+-|-|-
+最高权限 选择对应系统win10|添加 工作站解锁时|添加hide.vbs
 
 # 参考：
 * https://www.cnblogs.com/mu---mu/p/FaceRecognition-tensorflow.html
 * https://github.com/saksham-jain/Lock-Unlock-Laptop-PC-Screen-Using-Face-Recognition
+
+#CSDN:https://blog.csdn.net/weixin_42348202/article/details/104071199
